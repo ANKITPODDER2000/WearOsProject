@@ -19,6 +19,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
+import java.util.Random
 
 class MainViewModel : ViewModel() {
 
@@ -79,9 +80,9 @@ class MainViewModel : ViewModel() {
                 Log.e(TAG, "sendAsset: bitmap is null")
                 return@launch
             }
-            val asset = getAssetFromBitmap(bitmap)
+            // val asset = getAssetFromBitmap(bitmap)
             val request = PutDataMapRequest.create("/mobile_application_image").run {
-                dataMap.putAsset("test_image", asset)
+                dataMap.putInt("test_int", Random().nextInt(100000))
                 asPutDataRequest()
             }
             val task = Wearable.getDataClient(context).putDataItem(request)

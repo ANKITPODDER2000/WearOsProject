@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.wearapplication"
+        applicationId = "com.example.datatransfer"
         minSdk = 30
         targetSdk = 33
         versionCode = 1
